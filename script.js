@@ -39,4 +39,12 @@ function citySearch(searchResults) {
 function getQuality(lat, lon, name) {
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlAir = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKeyAir}`;
-        });
+    fetch(apiUrlAir)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (response) {
+        var {aqi} = response.list[0].main;
+        renderAirQuality(aqi, name);
+    });
+        };

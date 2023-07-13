@@ -25,3 +25,13 @@ function citySearch(searchResults) {
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
     console.log("inside citySearch", searchResults);
+
+    fetch(apiUrlGeo)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (response) {
+        var {lat, lon, name} = response[0];
+        getQuality(lat, lon, name);
+    });
+}

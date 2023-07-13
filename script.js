@@ -12,5 +12,5 @@ var mapOne = document.querySelector("#map-one");
 var mapEl = document.querySelector("#mapone");
 
 searchBtn.addEventListener("click", function (e) {
-
+    citySearch(searchText.value);
 });

@@ -3,3 +3,4 @@ var openWeatherApiKey = "http://api.openweathermap.org/data/2.5/air_pollution?la
 
 var searchText = document.querySelector("#search-box");
 var searchBtn = document.querySelector("#searchButton");
+var searchedCities = document.querySelector("#searchedCities");

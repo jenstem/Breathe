@@ -52,4 +52,5 @@ function getQuality(lat, lon, name) {
 function renderAirQuality(aqi, cityName) {
     var nameOfCity = document.createElement("h2");
     var airQualityEl = document.createElement("h3");
+    nameOfCity.textContent = cityName;
 }

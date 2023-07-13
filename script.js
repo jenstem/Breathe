@@ -8,3 +8,4 @@ var cityName = document.querySelector("#city-name");
 var airEl = document.querySelector("#air");
 
 var mapContainer = document.querySelector(".map-container");
+var mapOne = document.querySelector("#map-one");

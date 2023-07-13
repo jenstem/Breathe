@@ -16,5 +16,9 @@ searchBtn.addEventListener("click", function (e) {
 });
 
 function citySearch(searchResults) {
+    var airQuality;
+    if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
+        airQuality = searchResults;
+        return;
 
     };

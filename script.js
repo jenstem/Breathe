@@ -35,3 +35,7 @@ function citySearch(searchResults) {
         getQuality(lat, lon, name);
     });
 }
+
+function getQuality(lat, lon, name) {
+
+        });

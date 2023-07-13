@@ -14,3 +14,7 @@ var mapEl = document.querySelector("#mapone");
 searchBtn.addEventListener("click", function (e) {
     citySearch(searchText.value);
 });
+
+function citySearch(searchResults) {
+
+    };

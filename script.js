@@ -5,3 +5,4 @@ var searchText = document.querySelector("#search-box");
 var searchBtn = document.querySelector("#searchButton");
 var searchedCities = document.querySelector("#searchedCities");
 var cityName = document.querySelector("#city-name");
+var airEl = document.querySelector("#air");

@@ -1,1 +1,2 @@
 var googleMapsApiKey = "";
+var openWeatherApiKey = "";

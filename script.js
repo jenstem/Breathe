@@ -50,5 +50,5 @@ function getQuality(lat, lon, name) {
         };
 
 function renderAirQuality(aqi, cityName) {
-
+    var nameOfCity = document.createElement("h2");
 }

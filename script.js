@@ -37,5 +37,5 @@ function citySearch(searchResults) {
 }
 
 function getQuality(lat, lon, name) {
-
+    var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
         });

@@ -2,6 +2,12 @@
 var googleMapsApiKey = "";
 var openWeatherApiKey = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={8686e0fe4732b6b364f3c95d6dfcf09c}";
 
+// Backup for Google Maps - API Key from Mapquest/Radar
+var mapquestApiKey = "prj_test_pk_ef08dfd3ed0a8748c5d83db178b8283bcdf5c539";
+
+// Backup for Open Weather - API Key from RapidAPI
+var rapidApiKey = "b9b932d13amshd7a22bc43c9b9cep19e1b4jsn54e36226b53c";
+
 // variable search area and button
 var searchText = document.querySelector("#search-box");
 var searchBtn = document.querySelector("#searchButton");

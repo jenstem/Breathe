@@ -70,4 +70,5 @@ function renderAirQuality(aqi, cityName) {
       airQuality = "Very Poor";
     }
     airQualityEl.textContent = airQuality;
+    airEl.append(nameOfCity, airQualityEl);
 }

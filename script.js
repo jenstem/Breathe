@@ -20,5 +20,6 @@ function citySearch(searchResults) {
     if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
         airQuality = searchResults;
         return;
+    }
 
-    };
+    var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";

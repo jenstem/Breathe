@@ -6,3 +6,5 @@ var searchBtn = document.querySelector("#searchButton");
 var searchedCities = document.querySelector("#searchedCities");
 var cityName = document.querySelector("#city-name");
 var airEl = document.querySelector("#air");
+
+var mapContainer = document.querySelector(".map-container");

@@ -48,3 +48,7 @@ function getQuality(lat, lon, name) {
         renderAirQuality(aqi, name);
     });
         };
+
+function renderAirQuality(aqi, cityName) {
+
+}

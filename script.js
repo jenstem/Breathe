@@ -53,19 +53,21 @@ function renderAirQuality(aqi, cityName) {
     var nameOfCity = document.createElement("h2");
     var airQualityEl = document.createElement("h3");
     nameOfCity.textContent = cityName;
+    var airQuality;
     if (aqi == 1) {
-        airQuality = "Good";
-      }
-      if (aqi == 2) {
-        airQuality = "Fair";
-      }
-      if (aqi == 3) {
-        airQuality = "Moderate";
-      }
-      if (aqi == 4) {
-        airQuality = "Poor";
-      }
-      if (aqi == 5) {
-        airQuality = "Very Poor";
-      }
+      airQuality = "Good";
+    }
+    if (aqi == 2) {
+      airQuality = "Fair";
+    }
+    if (aqi == 3) {
+      airQuality = "Moderate";
+    }
+    if (aqi == 4) {
+      airQuality = "Poor";
+    }
+    if (aqi == 5) {
+      airQuality = "Very Poor";
+    }
+    airQualityEl.textContent = airQuality;
 }

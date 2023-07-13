@@ -10,3 +10,7 @@ var airEl = document.querySelector("#air");
 var mapContainer = document.querySelector(".map-container");
 var mapOne = document.querySelector("#map-one");
 var mapEl = document.querySelector("#mapone");
+
+searchBtn.addEventListener("click", function (e) {
+
+});

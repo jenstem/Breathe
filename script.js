@@ -156,7 +156,7 @@ function getQuality(lat, lon, name) {
 
 
 function getAirQuality(response) {
-
+}
 // display an icon to represent good, fair, moderate, poor, very poor and we create our own scale
 
 function renderAirQuality(aqi, cityName) {
@@ -183,3 +183,4 @@ function renderAirQuality(aqi, cityName) {
     }
     airQualityEl.textContent = airQuality;
     airEl.append(nameOfCity, airQualityEl);
+}

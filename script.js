@@ -39,7 +39,7 @@ searchBtn.addEventListener("click", function () {
     console.log(searchText.value);
     citySearch(searchText.value);
     saveCity(searchText.value);
-    // saveTheCityBtn();
+
 });
 
 // function saveTheCityBtn(locateCity) {
@@ -106,12 +106,12 @@ function saveTheBtns() {
 }
 
 //googlemap
-function myMap(lat,lon) {
-  var mapProp = {
-      center: new google.maps.LatLng(lat, lon),
-      zoom: 8,
-  };
-  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+function myMap(lat, lon) {
+    var mapProp = {
+        center: new google.maps.LatLng(lat, lon),
+        zoom: 8,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
 
@@ -125,19 +125,18 @@ function citySearch(cityName) {
 
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
-    // console.log("inside citySearch", searchResults);
 
     // only need function inside fetch if you need to create a function
     fetch(apiUrlGeo)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (response) {
-        console.log(response);
-        var {lat, lon, name} = response[0];
-        getQuality(lat, lon, name);
-        myMap(lat, lon);
-    });
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response);
+            var { lat, lon, name } = response[0];
+            getQuality(lat, lon, name);
+            myMap(lat, lon);
+        });
 }
 
 // Fetch the air quality
@@ -145,29 +144,18 @@ function getQuality(lat, lon, name) {
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlAir = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKeyAir}`;
     fetch(apiUrlAir)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (response) {
-        var {aqi} = response.list[0].main;
-        renderAirQuality(aqi, name);
-    });
-        };
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            var { aqi } = response.list[0].main;
+            renderAirQuality(aqi, name);
+        });
+};
 
 
 
 function getAirQuality(response) {
-//     // figure out variables and array for this
-//     // use this as guide
-//     // var cityName = response.city.name;
-//     // var getTemp = response.list[0].main.temp;
-//     // var getWind = response.list[0].wind.speed;
-//     // var getHumid = response.list[0].main.humidity;
-//     // city.textContent = cityName;
-//     // tempEL.textContent = getTemp + "°F";
-//     // windEl.textContent = getWind + " mph";
-//     // humidEl.textContent = getHumid + "%";
-        }
 
 // display an icon to represent good, fair, moderate, poor, very poor and we create our own scale
 
@@ -178,20 +166,20 @@ function renderAirQuality(aqi, cityName) {
     nameOfCity.textContent = cityName;
     var airQuality;
     if (aqi == 1) {
-      airQuality = "Air quality is good" + " 🔵";
+        airQuality = "Air quality is good" + " 🔵";
     }
     if (aqi == 2) {
-      airQuality = "Air quality is fair" + " 🟢";
+        airQuality = "Air quality is fair" + " 🟢";
     }
     if (aqi == 3) {
-      airQuality = "Air quality is moderate" + " 🟡";
+        airQuality = "Air quality is moderate" + " 🟡";
     }
     if (aqi == 4) {
-      airQuality = "Air quality is poor" + " 🟠";
+        airQuality = "Air quality is poor" + " 🟠";
     }
     if (aqi == 5) {
-      airQuality = "Air quality is very poor" + " 🔴";
+        airQuality = "Air quality is very poor" + " 🔴";
+
     }
     airQualityEl.textContent = airQuality;
     airEl.append(nameOfCity, airQualityEl);
-}

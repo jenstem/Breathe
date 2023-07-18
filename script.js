@@ -2,8 +2,9 @@
 var googleMapsApiKey = "";
 var openWeatherApiKey = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={8686e0fe4732b6b364f3c95d6dfcf09c}";
 
-// Backup for Google Maps - API Key from Mapquest/Radar
-var mapquestApiKey = "prj_test_pk_ef08dfd3ed0a8748c5d83db178b8283bcdf5c539";
+// Backup for Google Maps - API Key from Bing Maps then Mapquest/Radar
+// var mapquestApiKey = "prj_test_pk_ef08dfd3ed0a8748c5d83db178b8283bcdf5c539";
+var bingMapsApiKey = "AjuFMgDNUeVWcHGU633JdkzIGhbOjzM6-ruaD9QyJr4RPe4AHW-qEug1BK1URiom";
 
 // Backup for Open Weather - API Key from RapidAPI
 var rapidApiKey = "b9b932d13amshd7a22bc43c9b9cep19e1b4jsn54e36226b53c";
@@ -12,6 +13,7 @@ var rapidApiKey = "b9b932d13amshd7a22bc43c9b9cep19e1b4jsn54e36226b53c";
 var searchText = document.querySelector("#search-box");
 var searchBtn = document.querySelector("#searchButton");
 var searchedCities = document.querySelector("#searchedCities");
+var searchedCityEL = document.querySelector("#location-search");
 
 var cityName = document.querySelector("#city-name");
 var airEl = document.querySelector("#air");
@@ -21,6 +23,10 @@ var mapContainer = document.querySelector(".map-container");
 var mapOne = document.querySelector("#map-one");
 var mapEl = document.querySelector("#mapone");
 
+searchedCityEL.style.display = 'none';
+
+renderSearchHistory();
+
 // variables to handle maps
 // var googleMaps = ;
 // var openWeather = ;
@@ -29,12 +35,75 @@ var mapEl = document.querySelector("#mapone");
 
 // search button event listener
 
-searchBtn.addEventListener("click", function (e) {
+searchBtn.addEventListener("click", function () {
     console.log(searchText.value);
     citySearch(searchText.value);
-
+    saveCity(searchText.value);
 
 });
+
+// function saveTheCityBtn(locateCity) {
+//   var searchingButton = document.createElement("button");
+//   searchingButton.classList.add("btn", "btn-outline-secondary", "w-100");
+//   searchingButton.textContent = locateCity;
+//   searchedCities.appendChild(searchingButton);
+//   searchingButton.addEventListener("click", function (event) {
+//       var citySearched = event.target.textContent;
+//       saveCityList(citySearched);
+//   });
+// }
+
+function renderSearchHistory() {
+  searchedCities.innerHTML = "";
+  var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+  if (savedCities.length) {
+    for (let index = 0; index < savedCities.length; index++) {
+      var searchingButton = document.createElement("button");
+      searchingButton.classList.add("btn", "btn-outline-secondary", "w-100");
+      searchingButton.textContent = savedCities[index];
+      searchedCities.appendChild(searchingButton);
+      searchingButton.addEventListener("click", function (event) {
+          var citySearched = event.target.textContent;
+          saveCityList(citySearched);
+      });
+
+    }
+  }
+}
+
+function saveCityList(citySearched) {
+  citySearch(citySearched)
+  searchText.classList.remove('col-12')
+  searchText.classList.add('col-4')
+  searchedCityEL.style.display = '';
+}
+
+// Save in localStorage
+function saveCity(citySearched) {
+  var savedCities = localStorage.getItem("savedCities");
+  if (savedCities) {
+      savedCities = JSON.parse(savedCities);
+  } else {
+      savedCities = [];
+  }
+  if (!savedCities.includes(citySearched)) {
+    savedCities.push(citySearched);
+    localStorage.setItem("savedCities", JSON.stringify(savedCities));
+  }
+  renderSearchHistory();
+}
+
+// Save the searched cities
+function saveTheBtns() {
+  var savedCities = localStorage.getItem("savedCities");
+  if (savedCities) {
+      savedCities = JSON.parse(savedCities);
+      savedCities.innerHTML = "";
+      for (let i = 0; i < savedCities.length; i++) {
+          saveTheCityBtn(savedCities[i]);
+      }
+  }
+}
 
 //googlemap
 function myMap(lat, lon) {
@@ -45,18 +114,19 @@ function myMap(lat, lon) {
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
+
 // function for search
 function citySearch(cityName) {
     var airQuality;
-    //if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
-    //    airQuality = searchResults;
-    //   return;
-    //}
+    // if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
+    //     airQuality = searchResults;
+    //     return;
+    // }
 
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
 
-
+    // only need function inside fetch if you need to create a function
     fetch(apiUrlGeo)
         .then(function (response) {
             return response.json();
@@ -83,21 +153,11 @@ function getQuality(lat, lon, name) {
         });
 };
 
-// display an icon to represent good, fair, moderate, poor, very poor and we create our own scale
+
 
 function getAirQuality(response) {
-    // figure out variables and array for this
-    // use this as guide
-    // var cityName = response.city.name;
-    // var getTemp = response.list[0].main.temp;
-    // var getWind = response.list[0].wind.speed;
-    // var getHumid = response.list[0].main.humidity;
-    // city.textContent = cityName;
-    // tempEL.textContent = getTemp + "°F";
-    // windEl.textContent = getWind + " mph";
-    // humidEl.textContent = getHumid + "%";
-}
 
+// display an icon to represent good, fair, moderate, poor, very poor and we create our own scale
 
 function renderAirQuality(aqi, cityName) {
     airEl.innerHTML = "";
@@ -119,6 +179,7 @@ function renderAirQuality(aqi, cityName) {
     }
     if (aqi == 5) {
         airQuality = "Air quality is very poor" + " 🔴";
+
     }
     airQualityEl.textContent = airQuality;
     airEl.append(nameOfCity, airQualityEl);

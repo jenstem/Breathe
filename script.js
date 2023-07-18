@@ -30,28 +30,42 @@ var mapEl = document.querySelector("#mapone");
 // search button event listener
 
 searchBtn.addEventListener("click", function (e) {
+    console.log(searchText.value);
     citySearch(searchText.value);
+  
+
 });
 
+//googlemap
+function myMap(lat,lon) {
+  var mapProp = {
+      center: new google.maps.LatLng(lat, lon),
+      zoom: 8,
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+
 // function for search
-function citySearch(searchResults) {
+function citySearch(cityName) {
     var airQuality;
-    if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
-        airQuality = searchResults;
-        return;
-    }
+    //if (searchResults === "Good" || searchResults === "Fair" || searchResults === "Moderate" || searchResults === "Poor" || searchResults === "Very Poor") {
+    //    airQuality = searchResults;
+    //   return;
+    //}
 
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
     var apiUrlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
-    console.log("inside citySearch", searchResults);
+  
 
     fetch(apiUrlGeo)
     .then(function (response) {
         return response.json();
     })
     .then(function (response) {
+        console.log(response);
         var {lat, lon, name} = response[0];
         getQuality(lat, lon, name);
+        myMap(lat, lon);
     });
 }
 

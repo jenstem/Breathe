@@ -20,7 +20,7 @@
       rel="stylesheet"/>
 
     <link rel="stylesheet" href="style.css"/>
-    
+
 <!-- Title -->
     <title>Air Quality Web App</title>
   </head>
@@ -36,98 +36,49 @@
               <input type="search" id="search-box" class="form-control rounded" placeholder="San Diego">
               <button type="button" id="searchButton" class="btn btn-outline-secondary">Search</button>
             <hr>
+            <div>
+              <!-- <div class = "form-posline mb-4"> -->
+                  <div id="searchedCities" class="leftspace"></div>
+                  <div id="air"></div>
+                  <img src="lowerscale.jpg" alt="Air Quality Scale" height="80" align="right">
+              <!-- </div> -->
             <!-- Cities searched for -->
-            <div id="searchedCities" class="leftspace">
+            <!-- <div id="searchedCities" class="leftspace"> -->
             </div>
-            <div id="air"></div>
+            <!-- <div id="air"></div> -->
         </section>
-        <div class="container"> 
-        <aside class="info-container">
+        <div class="container">
+        <!-- <aside class="info-container">
             <div class="position">
-                <select name="City" id="City">
-                  <option value="New York" disabled>New York</option>
-                  <option value="Bridgeport">Bridgeport</option>
-                  <option value="Washington">Washington</option>
-                  <option value="Hardford" selected>Hardford</option>
-                </select>
-                <div class = "form-posline mb-4">
-                    <label for = "name">latitude</label>
-                    <textarea class = "form-control" rows = "1" placeholder = "latitude"></textarea>
-                </div> 
-                <div class = "form-posline mb-4">
-                  <label for = "name">Longitude</label>
-                  <textarea class = "form-control" rows = "1" placeholder = "Longitude"></textarea>
-                </div>
-                <button type="button" class="btn btn-Default">Analyse air Quality</button>
-            </div> 
+            </div>
             <br>
             <br>
-            <p> Current air pollution data</p>
-            <div class = "form-posline mb-4">
-                <label for = "name">polluant</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Polluant"></textarea>
-            </div> 
-            <div class = "form-posline mb-4">
-              <label for = "name">Quantify-emissions</label>
-              <textarea class = "form-control" rows = "1" placeholder = "Quantify the emissions"></textarea>
-            </div> 
-            <div class = "form-posline mb-4">
-                <label for = "name">air-quality</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Air quality"></textarea>
-            </div> 
-        </aside>
-        <section class="map-container"> 
+        </aside> -->
+        <section class="map-container">
             <div id="mapone" class="md:h-screen lg:h-screen bg-gray-100 dark:bg-gray-800">
+              <section id="location-search" class="col-8">
                 <!-- Map Placeholder -->
                 <div class="bg-gray-100 dark:bg-gray-800 py-10">
-                  <div class="map-container">
+                  <!-- <div class="map-container">
+                    <div id="googleMap" style="width:100%;height:400px;"></div> -->
                       <div class="container mx-auto px-4">
                         <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Map</h2>
+                        <div class="map-container">
+                          <div id="googleMap" style="width:100%;height:400px;"></div>
                         <div class="bg-gray-300 h-96 rounded-lg" id="map-one"></div>
                       </div>
                   </div>
                 </div>
               </div>
-
-            <div>
-                <p> Forecast air pollution data/ Historical air pollution data</p>
+            <!-- <div>
                 <div class = "form-posline mb-4">
-                    <label for = "name">air-quality</label>
-                    <textarea class = "form-control" rows = "1" placeholder = "Air quality"></textarea>
-                </div> 
+                    <label for = "name">Air Quality</label>
+                    <div id="searchedCities" class="leftspace"></div>
+                    <div id="air"></div>
+                </div> -->
             </div>
         </section>
-        </div>  
-        <section class="pollution-container"> 
-            <div class="container">
-            <div class="d-flex flex-row m-2">
-            <div class="p-2 border border-dark">
-                <label for = "name">Selected city</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Selected city"></textarea>
-            </div>
-            <div class="p-2 border border-dark bg-info">
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-            </div>
-            <div class="p-2 border border-dark bg-info">
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-                <label for = "name">Pollution components</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Pollution components"></textarea>
-            </div>
-            <div class="p-2 border border-dark bg-info">
-                <label for = "name">Air Quality Index</label>
-                <textarea class = "form-control" rows = "1" placeholder = "Air Quality Index"></textarea>
-            </div>
-    
-            </div>
-        </section>
+        </div>
   </main>
   <!-- Footer -->
   <footer>

@@ -1,5 +1,4 @@
 // variables
-var googleMapsApiKey = "";
 var openWeatherApiKey = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={8686e0fe4732b6b364f3c95d6dfcf09c}";
 
 // Backup for Google Maps - API Key from Bing Maps then Mapquest/Radar
@@ -105,13 +104,16 @@ function saveTheBtns() {
   }
 }
 
-//googlemap
+
+//googlemap with marker
 function myMap(lat, lon) {
-    var mapProp = {
-        center: new google.maps.LatLng(lat, lon),
-        zoom: 8,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+   
+map = new google.maps.Map(document.getElementById("googleMap"), {
+    center: {lat: lat, lng: lon},
+    zoom: 12
+});
+
+marker = new google.maps.Marker({map: map, position: {lat: lat, lng: lon}});
 }
 
 
@@ -134,6 +136,7 @@ function citySearch(cityName) {
         .then(function (response) {
             console.log(response);
             var { lat, lon, name } = response[0];
+            console.log(lat, lon, name);
             getQuality(lat, lon, name);
             myMap(lat, lon);
         });

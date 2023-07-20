@@ -12,7 +12,7 @@ The user can search the air quality for multiple cities.  When the user types a 
 
 AS A health-concerned person\
 I WANT to see the air quality index for multiple cities\
-SO THAT I can find a place to live and breath easier
+SO THAT I can find a place to live and breathe easier
 
 ## Acceptance Criteria
 
@@ -22,7 +22,9 @@ THEN I am presented with the current air quality index for that city and that ci
 WHEN I view current air quality index for that city\
 THEN I am presented with the city name, the air quality index, a map of the city, and a colored icon representating where on the air quality scale the city falls\
 WHEN I click on a city in the search history\
-THEN I am again presented with current air quality index for that city
+THEN I am again presented with current air quality index for that city\
+WHEN I type in the same city into search a second time\
+THEN I can see that the city is not added to the search history a second time
 
 ## Screenshots:
 
@@ -38,4 +40,16 @@ THEN I am again presented with current air quality index for that city
 *This is a screenshot of the search history*
 ##
 
+## Technologies used:
+
+APIs:
+[Google Maps](https://developers.google.com/maps/)
+[Open Weather](https://openweathermap.org/api/air-pollution
+aqicn.org )
+[Bing Maps - backup for Google Maps](https://www.bingmapsportal.com/Application)
+[Rapid - backup for Open Weather](https://radar.com/)
+
+
 ## Notes:
+
+Jen received help from her tutor, [Scott Everett](https://calendly.com/fsf-tutor-team/scott-everett?month=2023-06).

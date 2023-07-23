@@ -16,7 +16,7 @@ SO THAT I can find a place to live and breathe easier
 
 ## Acceptance Criteria
 
-GIVEN a air quality app with form inputs\
+GIVEN an air quality app with form inputs\
 WHEN I search for a city\
 THEN I am presented with the current air quality index for that city and that city is added to the search history\
 WHEN I view current air quality index for that city\
@@ -24,7 +24,7 @@ THEN I am presented with the city name, the air quality index, a map of the city
 WHEN I click on a city in the search history\
 THEN I am again presented with current air quality index for that city\
 WHEN I type in the same city into search a second time\
-THEN I can see that the city is not added to the search history a second time
+THEN I can see that the city is not repeated in the search history
 
 ## Screenshots:
 
@@ -33,11 +33,11 @@ THEN I can see that the city is not added to the search history a second time
 ##
 
 ![](https://github.com/jenstem/weather-dashboard/blob/main/assets/fiveday.png)
-*This is a screenshot of the map*
+*This is a screenshot of the Contact Us page*
 ##
 
 ![](https://github.com/jenstem/weather-dashboard/blob/main/assets/search.png)
-*This is a screenshot of the search history*
+*This is a screenshot of the search history that's saved in local storage*
 ##
 
 ## Technologies used:
@@ -45,7 +45,7 @@ THEN I can see that the city is not added to the search history a second time
 APIs:
 [Google Maps](https://developers.google.com/maps/)
 [Open Weather](https://openweathermap.org/api/air-pollution
-aqicn.org )
+aqicn.org)
 [Bing Maps - backup for Google Maps](https://www.bingmapsportal.com/Application)
 [Rapid - backup for Open Weather](https://radar.com/)
 

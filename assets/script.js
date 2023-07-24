@@ -1,6 +1,6 @@
 // Variables
 var googleMapsApiKey = "";
-var openWeatherApiKey = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={8686e0fe4732b6b364f3c95d6dfcf09c}";
+var openWeatherApiKey = "https://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={8686e0fe4732b6b364f3c95d6dfcf09c}";
 
 // Backup for Google Maps - API Key from Mapquest/Radar and then Bing Maps
 var mapquestApiKey = "prj_test_pk_ef08dfd3ed0a8748c5d83db178b8283bcdf5c539";

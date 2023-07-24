@@ -77,3 +77,10 @@
   select:focus{
     outline:none;
   }
+
+  .nav-link{
+    font-size: large;
+    font-style: italic;
+
+  }
+

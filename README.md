@@ -1,6 +1,6 @@
 ## Breathe
 
-Click [here](#addlink) to see the website.
+Click [here](https://jenstem.github.io/Breathe/) to see the website.
 
 ## Description
 
@@ -28,15 +28,15 @@ THEN I can see that the city is not repeated in the search history
 
 ## Screenshots:
 
-![](https://github.com/jenstem/weather-dashboard/blob/main/assets/weather.png)
+![](https://github.com/jenstem/Breathe/blob/main/assets/homepage.png)
 *This is a screenshot of Breathe*
 ##
 
-![](https://github.com/jenstem/weather-dashboard/blob/main/assets/fiveday.png)
+![](https://github.com/jenstem/Breathe/blob/main/assets/contactpage.png)
 *This is a screenshot of the Contact Us page*
 ##
 
-![](https://github.com/jenstem/weather-dashboard/blob/main/assets/search.png)
+![](https://github.com/jenstem/Breathe/blob/main/assets/localStorage.png)
 *This is a screenshot of the search history that's saved in local storage*
 ##
 

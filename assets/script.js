@@ -102,7 +102,7 @@ function citySearch(cityName) {
     var airQuality;
 
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
-    var apiUrlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
+    var apiUrlGeo = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKeyAir;
 
     // only need function inside fetch if you need to create a function
     fetch(apiUrlGeo)
@@ -120,7 +120,7 @@ function citySearch(cityName) {
 // Fetch the air quality
 function getQuality(lat, lon, name) {
     var apiKeyAir = "8686e0fe4732b6b364f3c95d6dfcf09c";
-    var apiUrlAir = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKeyAir}`;
+    var apiUrlAir = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKeyAir}`;
     fetch(apiUrlAir)
         .then(function (response) {
             return response.json();

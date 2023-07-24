@@ -15,86 +15,76 @@
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"/>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap"
-      rel="stylesheet"/>
-
-    <link rel="stylesheet" href="style.css"/>
-
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 <!-- Title -->
-    <title>Air Quality Web App</title>
+    <title>Breathe Air Quality Web App</title>
   </head>
-  <body>
+<body>
 <!-- Header -->
-    <header>
-
-    </header>
-    <main>
-        <!-- Search and Search Button -->
-        <section id="search" class="col-12">
-            <h2 class="topspace leftspace">Search for a City:</h2>
-              <input type="search" id="search-box" class="form-control rounded" placeholder="San Diego">
-              <button type="button" id="searchButton" class="btn btn-outline-secondary">Search</button>
-            <hr>
-            <div>
-              <!-- <div class = "form-posline mb-4"> -->
-                  <div id="searchedCities" class="leftspace"></div>
-                  <div id="air"></div>
-                  <img src="lowerscale.jpg" alt="Air Quality Scale" height="80" align="right">
-              <!-- </div> -->
-            <!-- Cities searched for -->
-            <!-- <div id="searchedCities" class="leftspace"> -->
-            </div>
-            <!-- <div id="air"></div> -->
-        </section>
-        <div class="container">
-        <!-- <aside class="info-container">
-            <div class="position">
-            </div>
-            <br>
-            <br>
-        </aside> -->
-        <section class="map-container">
-            <div id="mapone" class="md:h-screen lg:h-screen bg-gray-100 dark:bg-gray-800">
-              <section id="location-search" class="col-8">
-                <!-- Map Placeholder -->
-                <div class="bg-gray-100 dark:bg-gray-800 py-10">
-                  <!-- <div class="map-container">
-                    <div id="googleMap" style="width:100%;height:400px;"></div> -->
-                      <div class="container mx-auto px-4">
-                        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Map</h2>
-                        <div class="map-container">
-                          <div id="googleMap" style="width:100%;height:400px;"></div>
-                        <div class="bg-gray-300 h-96 rounded-lg" id="map-one"></div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            <!-- <div>
-                <div class = "form-posline mb-4">
-                    <label for = "name">Air Quality</label>
-                    <div id="searchedCities" class="leftspace"></div>
-                    <div id="air"></div>
-                </div> -->
-            </div>
-        </section>
+<header>
+    <nav class="navbar navbar-expand-sm bg-body-tertiary d-flex">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand text-dark" href="#"><h1>Breathe&#127788;</h1></a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
-  </main>
-  <!-- Footer -->
-  <footer>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <br>
+    <br>
+    <br>
+    <!-- Search and Search Button -->
+    <section id="search" class="col-12">
+        <h3 class="topspace leftspace text-dark">Search for a City:</h3>
+          <input type="search" id="search-box" class="form-control rounded text-dark width-size leftspace" placeholder="San Diego">
+          <button type="button" id="searchButton" class="btn btn-outline-dark leftspace">Search</button>
+        <hr>
+    </section>
+        <!-- Cities searched for -->
+    <section>
+        <div id="searchedCities" class="leftspace width-size">
+        </div>
+        <div id="air"></div>
+      </section>
 
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      <div id="mapone" class="md:h-screen lg:h-screen bg-gray-100 dark:bg-gray-800">
+        <img src="lowerscale.jpg" alt="Air Quality Scale">
+        <section id="location-search" class="col-8">
+        <!-- Map Placeholder -->
+    <div class="bg-gray-100 dark:bg-gray-800 py-10">
+      <div id="googleMap" style="width:100%;height:400px;" class="map-container container mx-auto px-4">
+      </div>
+      <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Map</h2>
+    </div>
+        </section>
+      </div>
+  </main>
+
+      <!-- Footer -->
+      <footer>
+
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_D3TWiE3QS8UNDkIcMSTgtQXdMDiywP0&callback=myMap"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_D3TWiE3QS8UNDkIcMSTgtQXdMDiywP0&callback=myMap"></script>
 
-</body>
+  </body>
 </html>

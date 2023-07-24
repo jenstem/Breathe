@@ -1,6 +1,6 @@
 ## Breathe
 
-Click [here](#addlink) to see the website.
+Click [here](https://jenstem.github.io/Breathe/) to see the website.
 
 ## Description
 
